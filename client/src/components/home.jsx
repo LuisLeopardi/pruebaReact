@@ -13,7 +13,7 @@ const Home = ({showModal, setShowModal}) => {
     
     const getTasksList = async () => {
         const {content, error} = await getTasks();
-        console.log(content)
+        console.log(content, error)
         setLoading({loading:false, error})
         setTasks(content)
     }

@@ -27,6 +27,7 @@ module.exports = {
     adminAuthorize: async (req, res, next) => {
         const { id } = jwt.decode(req.cookies.token8baseE, process.env.TOKENSECRET)
         const adminData = await admin.findById(id);
+        console.log(id)
         if (!adminData) {
             return handleResponse({content:"invalid token", error:true, status: 400}, res, next)
         } else {
@@ -36,6 +37,7 @@ module.exports = {
     adminTaskList: async (req, res, next) => {
         const {content} = res.locals.data;
         const {tasks} = await admin.findById({_id:content}, 'tasks -_id')
+        console.log(tasks)
         return handleResponse({content:tasks, error:false, status: 200}, res, next)
     },
     adminPostTask: async (req, res, next) => {
