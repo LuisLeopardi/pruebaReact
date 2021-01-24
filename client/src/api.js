@@ -10,7 +10,7 @@ export const login = ({ username, password }) => (
 )
 
 export const getTasks = () => (
-    axios.get(`${base}/tasks`, {withCredentials:true})
+    axios.post(`${base}/tasksList`, {withCredentials:true})
     .then(({data:{content}})=> {
         return { content, error:false  }
     })

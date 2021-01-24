@@ -1,20 +1,11 @@
 const router = require("express").Router()
 const {
-    adminTaskList, 
     adminAuthorize, 
     adminPostTask, 
     adminDeleteTask, 
     adminPathTask 
 } = require("../services/adminService");
 
-router.get("/", 
-adminAuthorize,
-adminTaskList,
-(req, res) => {
-    const {error, status, content} = res.locals.data;
-    console.log(error, status, content)
-    res.json({ error, status, content })
-})
 
 router.post("/", 
 adminAuthorize,
