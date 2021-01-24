@@ -12,6 +12,7 @@ adminAuthorize,
 adminTaskList,
 (req, res) => {
     const {error, status, content} = res.locals.data;
+    console.log(error, status, content)
     res.json({ error, status, content })
 })
 
