@@ -4,10 +4,10 @@ import {Button} from 'react-bootstrap';
 const NavButons = () => (
     <>
         <Link to="/">
-            <Button variant="primary">Home</Button> 
+            <Button className="m-1" variant="primary">Home</Button> 
         </Link>
         <Link to="/login"> 
-            <Button variant="success">Login</Button> 
+            <Button className="m-1" variant="success">Login</Button> 
         </Link>
     </>
 )

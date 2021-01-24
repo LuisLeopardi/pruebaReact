@@ -3,12 +3,14 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const routesIndex = require("./routes");
 const loaderIndex = require('./loaders');
+const dotenv = require("dotenv");
 const cors = require("cors")
 const port = process.env.PORT || 5000;
 
+dotenv.config();
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({ credentials:true, origin: "http://localhost:3000" }))
+app.use(cors({ credentials:true, origin: process.env.DOMAIN }))
 
 const startServer = async () => {
     app.listen(port, ()=> console.log(`server running in port ${port}`))

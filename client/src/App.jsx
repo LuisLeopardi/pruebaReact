@@ -21,7 +21,7 @@ const App = () => {
   return (
     <AuthContext.Provider value={{ setAuth, auth }} >
         <Router>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light">
                 <Navbar.Brand>Prueba Luis Leopardi</Navbar.Brand>
                 { auth? <AddButton setShowModal={setShowModal}/> : <NavButons/> }
             </Navbar>
